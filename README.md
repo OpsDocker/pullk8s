@@ -2,10 +2,17 @@
 
 Pull gcr.io's image for hub.docker.com tools
 
+
+# Install
+```
+sudo curl -L "https://raw.githubusercontent.com/OpsDocker/pullk8s/main/pullk8s.sh" -o /usr/local/bin/pullk8s
+sudo chmod +x /usr/local/bin/pullk8s
+```
+
 # Usage
 
 ```
-pullk8s.sh COMMAND [NAME[:TAG|@DIGEST]] [OPTIONS]
+pullk8s COMMAND [NAME[:TAG|@DIGEST]] [OPTIONS]
 
 Pull gcr.io's image for hub.docker.com
 
@@ -17,10 +24,10 @@ Options:
   --microk8s  If use MicroK8s release.
 
 Examples:
-  pullk8s.sh pull gcr.io/google_containers/etcd:2.0.12
-  pullk8s.sh pull k8s.gcr.io/etcd:2.0.12
-  pullk8s.sh pull k8s.gcr.io/pause:3.6 --microk8s
-  pullk8s.sh check --microk8s
+  pullk8s pull gcr.io/google_containers/etcd:2.0.12
+  pullk8s pull k8s.gcr.io/etcd:2.0.12
+  pullk8s pull k8s.gcr.io/pause:3.6 --microk8s
+  pullk8s check --microk8s
 ```
 
 # Synchronized
