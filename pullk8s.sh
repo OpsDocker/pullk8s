@@ -7,7 +7,7 @@ check(){
     do
      declare -a arr=( $line )
      microk8s kubectl describe pod ${arr[1]} --namespace=${arr[0]}
-    done|grep -i "image"|sed -nr 's/.*(failed to pull|Back-off pulling) image \"([^\"]+)\".*/\2/p'|uniq`
+    done|grep -i "image"|sed -nr 's/.*(failing to pull|Failed to pull|failed to pull|Back-off pulling) image \"([^\"]+)\".*/\2/p'|uniq`
     echo ${logs}
   fi
 }
